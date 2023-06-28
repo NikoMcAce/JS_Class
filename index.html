@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NikoMcAce</title>
     <script src="functions.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style></style>
 </head>
 <body>
 
@@ -12,8 +14,15 @@
     <button onclick="showmess('Raj')">Hi</button><br>
     <button onclick="showmessagefromfunciton('Raj')">From function</button>
     <br>
-
-    <p id="first_para"></p>
+    <div class="card">
+    <div class="card-header">
+        Featured
+    </div>
+    <div class="card-body">
+        <p id="first_para"></p>
+        <button onclick="document.write('Button clicked to document write')">From function</button>
+    </div>
+    </div>
 
     <script>
             document.getElementById("first_para").innerHTML= "This is printed from the innerhtml using JS";
