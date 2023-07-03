@@ -40,6 +40,12 @@ function arrayre()
     showthelist();
 }
 
+function start_array()
+{
+    value_u_got=document.getElementById("array_add").value;
+    myarray.unshift(value_u_got);
+    showthelist();
+}
 function showthelist()
 {
     let text="<br><ul>";
