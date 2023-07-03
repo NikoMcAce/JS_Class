@@ -37,10 +37,10 @@ function arrayre()
 {
     value_u_got=document.getElementById("array_add").value;
     myarray.push(value_u_got);
+    showthelist();
 }
 
 function showthelist()
 {
-
     document.getElementById("arrayrediv").innerHTML=myarray;
 }
