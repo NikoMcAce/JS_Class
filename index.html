@@ -69,7 +69,7 @@
         </div>
     </div>
 
-    <div class="card">
+    <div class="card numbers">
         <div class="card-header">
             Numbers
         </div>
@@ -93,14 +93,26 @@
             let result = x + y + Z;<br>
             //3030
             <hr>
-            <h4>Number Properties</h4>
+            <b>Number Properties</b><br>
             Number: 123.456789<br>
-            toString0: 123.456789<br>
-            to Exponential0: 1.23456789e+2<br>
-            toFixed(2): 123.46<br>
-            toPrecision(4): 123.5<br>
-            valueof(): 123.456789 IN<br>
-            <button id="valueof" onclick="valueofre()">Value of</button>
+            <button class="btn btn-outline-success" onclick="toStringre()">toString()</button><br>
+            <button class="btn btn-outline-success" onclick="toExponentialre()">toExponential()</button><br>
+            <button class="btn btn-outline-success" onclick="toFixedre()">toFixed(2)</button><br>
+            <button class="btn btn-outline-success" onclick="toPrecisionre()">toPrecision(4)</button><br>
+            <button  class="btn btn-outline-success" id="valueof" onclick="valueofre()">valueOf()</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            JS Array
+        </div>
+        <div class="card-body">
+            <button class="btn btn-outline-success" onclick="arrayre()">Show the list </button><br> 
+
+            <input type="text" id="array_add">
+            <button class="btn btn-outline-success" onclick="arrayre()">Add to array</button><br> 
+            <div id="arrayrediv"></div>
         </div>
     </div>
 
