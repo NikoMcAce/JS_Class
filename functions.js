@@ -62,3 +62,8 @@ function last_arryre()
 {
     alert (myarray[myarray.length-1]);
 }
+function delete_last_element()
+{
+    myarray.pop();
+    showthelist();
+}
