@@ -42,5 +42,17 @@ function arrayre()
 
 function showthelist()
 {
-    document.getElementById("arrayrediv").innerHTML=myarray;
+    let text="<br><ul>";
+
+    for (let i=0;i<myarray.length;i++)
+    {
+        text+= "<li>"+myarray[i]+"</li>"
+    }
+    text+="</ul>";
+    document.getElementById("arrayrediv").innerHTML=text;
+}
+
+function last_arryre()
+{
+    alert (myarray[myarray.length-1]);
 }
