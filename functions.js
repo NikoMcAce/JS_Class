@@ -67,3 +67,8 @@ function delete_last_element()
     myarray.pop();
     showthelist();
 }
+function sortre()
+{
+    myarray.sort();
+    showthelist();
+}
