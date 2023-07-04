@@ -114,3 +114,26 @@ function find_last_index_of()
         alert ("NikoMcAce is at position : "+rpos);
     }
 }
+
+function trycatchre()
+{
+    const arr=[1,2,3,4];
+    try {
+        arr=[12,23,43];
+    } catch (error) {
+        document.getElementById("trycatchrediv").innerHTML=error;
+    }
+}
+
+function datere()
+{
+    let current_date= new Date();
+    document.getElementById("datedivre").innerHTML=current_date;
+    current_date= new Date("2002-07-20");
+}
+
+function owndatere()
+{
+    let current_date= new Date("2002-07-20");
+    document.getElementById("datedivre").innerHTML=current_date;
+}
