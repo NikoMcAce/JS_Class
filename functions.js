@@ -72,3 +72,9 @@ function sortre()
     myarray.sort();
     showthelist();
 }
+function reversere()
+{
+    myarray.sort();
+    myarray.reverse();
+    showthelist();
+}
