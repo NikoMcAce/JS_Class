@@ -1,4 +1,4 @@
-let myarray=["Raj","Suraj","Sahil"];
+let myarray=[901,23,124,143,543,234,1];
 
 function showmessagefromfunciton(pol)
 {
@@ -76,5 +76,15 @@ function reversere()
 {
     myarray.sort();
     myarray.reverse();
+    showthelist();
+}
+function sort_numberre()
+{
+    myarray.sort(function (a,b) {return a-b});
+    showthelist();
+}
+function sort_number_reversere()
+{
+    myarray.sort(function (a,b) {return b-a});
     showthelist();
 }
