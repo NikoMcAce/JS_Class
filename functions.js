@@ -1,4 +1,4 @@
-let myarray=[901,23,124,143,543,234,1];
+let myarray=[];
 
 function showmessagefromfunciton(pol)
 {
@@ -87,4 +87,30 @@ function sort_number_reversere()
 {
     myarray.sort(function (a,b) {return b-a});
     showthelist();
+}
+function find_index_of()
+{
+    let pos= myarray.indexOf("NikoMcAce");
+    if (pos==-1)
+    {
+        alert ("NikoMcAce is Not found.");
+    }
+    else
+    {
+        alert ("NikoMcAce is at position : "+pos);
+    }
+}
+
+function find_last_index_of()
+{
+    showthelist();
+    let rpos= myarray.lastIndexOf("NikoMcAce");
+    if (rpos==-1)
+    {
+        alert ("NikoMcAce is Not found.");
+    }
+    else
+    {
+        alert ("NikoMcAce is at position : "+rpos);
+    }
 }
