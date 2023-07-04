@@ -137,3 +137,9 @@ function owndatere()
     let current_date= new Date("2002-07-20");
     document.getElementById("datedivre").innerHTML=current_date;
 }
+function formatted()
+{
+    let current_date= new Date();
+    let own=String(current_date.getFullYear())+"/"+String(current_date.getUTCMonth()+1)+"/"+String(current_date.getDay());
+    alert(own);
+}
