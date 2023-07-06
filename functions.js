@@ -1,4 +1,40 @@
 let myarray=[];
+let mymaps= new Map();
+
+function map_add()
+{
+    ikey=document.getElementById("map_add_input_key").value;
+    ivalue=document.getElementById("map_add_input_value").value;
+    mymaps.set(ikey,ivalue);
+    alert("Value has been added");
+}
+function map_remove()
+{
+    idelete=document.getElementById("map_remove_input").value;
+    if (mymaps.delete(idelete))
+    {
+        alert("Key-value pair has been deleted.");
+    }
+    else
+    {
+        alert("No such key found");
+    }  
+}
+function map_show()
+{
+    let text="";
+    mymaps.forEach(function (value,key)
+    {
+        text += key +" : "+ value + "<br>"
+    })
+    document.getElementById("map_output").innerHTML=text;
+}
+function map_search()
+{
+    search=document.getElementById("map_search").value;
+    
+    alert(mymaps.get(search));
+}
 
 function showmessagefromfunciton(pol)
 {
