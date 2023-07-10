@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Module</title>
+    <title>Import and export</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+    <h1 class="text-sm-center">Import and Export Thingy</h1>
+    <br>
     <div class="card">
         <div class="card-header"><h4>Importing the variables from the modules.js files</h4></div>
         <div class="card-body">
@@ -20,6 +21,18 @@
             
             let text = "Username : "+ username+" "+" Passowrd : "+password;
             document.getElementById("print_vars").innerHTML=text;
+        </script>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <h4>Importing a function</h4>
+        </div>
+        <div class="card-body">
+            <p id="function_import"></p>
+        </div>
+        <script type="module">
+            import mycred from "./export_function.js";
+            document.getElementById("function_import").innerHTML=mycred();
         </script>
     </div>
     
