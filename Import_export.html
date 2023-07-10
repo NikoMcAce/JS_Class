@@ -23,6 +23,8 @@
             document.getElementById("print_vars").innerHTML=text;
         </script>
     </div>
+
+
     <div class="card">
         <div class="card-header">
             <h4>Importing a function</h4>
@@ -33,6 +35,30 @@
         <script type="module">
             import mycred from "./export_function.js";
             document.getElementById("function_import").innerHTML=mycred();
+        </script>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <h2>Importing many things</h2>
+        </div>
+        <div class="card-body">
+            <p id="import_many_things"></p>
+            <p>import {greet,sum1,device} from "./many_exports.js";<br>
+                console.log(sum1(1,2));<br>
+                console.log(device.name);<br>
+                console.log(device.model);<br>
+                console.log(device.year);</p>
+        </div>
+        <script type="module">
+            import {greet,sum1,device} from "./many_exports.js";
+            console.log(sum1(1,2));
+            console.log(device.name);
+            console.log(device.model);
+            console.log(device.year);
+
+            
+            document.getElementById("import_many_things").innerHTML=(greet());
         </script>
     </div>
     
