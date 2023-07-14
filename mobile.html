@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NikoMcAce</title>
+    <script src="functions.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>Mobile Store</h1>
+    
+    <div class="card">
+        <div class="card-header">
+            Add/Remove
+        </div>
+        <div class="card-body">
+            <input type="text" id="maname" placeholder="Mobile Name">
+            <input type="text" id="maprice" placeholder="Mobile Price">
+            <button class="btn btn-success" onclick="add()">Add </button><br>
+
+            <input type="text" id="mdname" placeholder="Mobile Name">
+            <button class="btn btn-danger" onclick="remove()">Remove </button>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            Search/View
+        </div>
+        <div class="card-body">
+            <input type="text" id="msname" placeholder="Mobile Name">
+            <button class="btn btn-outline-primary" onclick="search()">Search </button><br>
+            <button class="btn btn-outline-secondary space" onclick="show()">Show all </button>
+            <br>            
+            <p id="view_it"></p>
+        </div>
+    </div>
+
+
+    <div class="card">
+        <div class="card-header">
+            Import and export
+        </div>
+        <div class="card-body">
+            <a href="https://nikomcace.github.io/JS_Class/Import_export.html"><button class="btn btn-outline-primary">Go to page</button></a>
+        </div>
+    </div>
+
+    <script>
+        let new_phone=new Map();
+        function add()
+        {
+            let maname=document.getElementById("maname").value;
+            let maprice=document.getElementById("maprice").value;
+            new_phone.set(maname,maprice);
+            show();
+        };
+        function remove()
+        {
+            let maname=document.getElementById("maname").value;
+            let maprice=document.getElementById("maprice").value;
+            new_phone.delete(maname);
+            show();
+        }
+        function show()
+        {
+            let text="<br><b>List of phone</b>";
+            for (let [key, value] of new_phone) {
+                console.log(`Key: ${key}, Value: ${value}`);
+                text+="<hr>"+key+" ---- "+value;
+            }
+            document.getElementById("view_it").innerHTML=text;
+        }
+        function search()
+        {
+            let ele= document.getElementById("msname").value;
+            let text= "<br><b>You searched for : "+ele+"</b><br><hr>";
+            text+=new_phone.get(ele);
+            document.getElementById("view_it").innerHTML=text;
+
+        }
+    </script>
+
+</body>
+
+</html>
