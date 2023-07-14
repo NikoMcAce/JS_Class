@@ -60,17 +60,27 @@
         function show()
         {
             let text="<br><b>List of phone</b>";
+            if (new_phone.size === 0) {
+                text = "<br>Nothing found";
+                document.getElementById("view_it").innerHTML=text;
+                return;
+            }
             for (let [key, value] of new_phone) {
                 console.log(`Key: ${key}, Value: ${value}`);
                 text+="<hr>"+key+" ---- "+value;
             }
+            
             document.getElementById("view_it").innerHTML=text;
         }
         function search()
         {
             let ele= document.getElementById("msname").value;
             let text= "<br><b>You searched for : "+ele+"</b><br><hr>";
-            text+=new_phone.get(ele);
+            if (new_phone.has(ele)) {
+                text += new_phone.get(ele);
+                } else {
+                text += "Nothing found";
+                }
             document.getElementById("view_it").innerHTML=text;
 
         }
