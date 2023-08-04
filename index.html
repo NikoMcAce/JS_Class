@@ -29,6 +29,24 @@
             <br><br>
             <p>Count is : </p>
             <p id="IIFE_output"></p>
+            <h5>Below you can see the code enclosed inside the &lt;code&gt;</h5>
+            <code>const my_module = <br>
+                (function (){<br>
+                    let count=0;<br>
+                    <br>
+                    function inc(){<br>
+                        count++;<br>
+                        document.getElementById("IIFE_output").innerHTML = count;<br>
+                    }<br>
+                    function dec(){<br>
+                        count--;<br>
+                        document.getElementById("IIFE_output").innerHTML = count;<br>
+                    }<br>
+                    return{<br>
+                        inc,<br>
+                        dec<br>
+                    }<br>
+                } )();   <br> </code>
         </div>
         <script>
             const my_module = 
