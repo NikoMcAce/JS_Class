@@ -23,11 +23,77 @@
         </div>
     </div>
 
+    <div class="card">
+        <div class="card-header">
+            Datatypes
+        </div>
+
+        <div class="card-body">
+            <code>
+                JSON Strings<br>
+                {"name" : "John" }<br><br>
+                JSON Numbers<br>
+                {"age": 30 J<br><br>
+                JSON Objects<br>
+                {<br>
+                "employee": {"name": "John", "age": 30, "city": "New York"}<br>
+                }<br><br>
+                JSON Arrays<br>
+                {<br>
+                'employees": ["John", "Anna", "Peter"]<br>
+                }<br><br>
+                JSON Booleans<br>
+                {"sale": true}<br><br>
+                JSON null<br>
+                ["middlename": null}<br>
+            </code>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            Objects from text
+        </div>
+
+        <div class="card-body">
+            <b>Object from string</b>
+            <p id="text"></p>
+
+            <b>Array from string </b>
+            <p id="arr"></p>
+
+            <b>Date from string</b>
+            <p id="dt"></p>
+        </div>
+    </div>
+        
+    
+
+    
+
     <script>
         const objs = {name:"Raj Davande",age:20,Occupation:"Student"};
         objs.name="Raj Sham Davande";
         objs["Occupation"]="Full stack developer";
         document.getElementById("show").innerHTML = objs.name + " is a "+objs["Occupation"];
+
+
+        //Parsing from text 
+        const txt = ' { "name" :"Lambo", "year":2019, "city": "New York" }';
+        const car = JSON.parse(txt);
+        document.getElementById("text").innerHTML = car.name +", from year " +car.year;
+
+        //parsing array from string 
+        const txt2= '["emp1", "emp2","emp3" ]';
+        const emps = JSON.parse(txt2);
+        document.getElementById("arr").innerHTML = emps[0];
+
+        //parsing date from a string 
+        const txt3 = ' { "name" :"Lambo", "make":"2002-07-20", "city": "New York" }';
+        const obj3 = JSON.parse(txt3);
+       // document.getElementById("dt").innerHTML = obj3.make;
+        obj3.make=new Date (obj3.make);
+        document.getElementById("dt").innerHTML = obj3.make;
+
 
     </script>
         
