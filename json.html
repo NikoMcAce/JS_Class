@@ -12,7 +12,45 @@
 </head>
 
 <body> 
-    
+    <div class="card">
+        <div class="card-header">
+            Local Storage
+        </div>
+
+        <div class="card-body">
+            <input class="input" id="name" placeholder="Name" type="text"><br>
+            <input class="input" id="age" placeholder="Age" type="number"><br>
+            <input class="input" id="occu" placeholder="Occupation" type="text">
+            <button class="btn btn-primary" onclick="savetolcl()">Save to local storage</button><br><br>
+            <button class="btn btn-outline-primary" onclick="retr()">Show</button>
+            <p id="lclstorage"></p>
+            <script>
+                function savetolcl()
+                {
+                    const temp1=document.getElementById("name").value;
+                    const temp2=document.getElementById("age").value;
+                    const temp3=document.getElementById("occu").value;
+
+                    //storing data 
+                    const obj1 = {"name":temp1,"age":temp2,"occu":temp3};
+                    const myjson = JSON.stringify(obj1);
+                    localStorage.setItem("niko",myjson);
+                    alert("Saved");
+                }
+                function retr()
+                {
+                    let text= localStorage.getItem("niko");
+                    const myobj = JSON.parse(text);
+                    document.getElementById("lclstorage").innerHTML = myobj.name + " / " + myobj.age + " / "+myobj.occu;
+                }
+                
+            </script>
+
+            
+
+            
+        </div>
+    </div>
     <div class="card">
         <div class="card-header">
             JSON
