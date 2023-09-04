@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plotly Examples</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Include Plotly.js -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Plotly Examples</h1>
+
+        <!-- Simple Graph -->
+        <div class="row">
+            <div class="col-md-6">
+                <div id="simple-graph"></div>
+            </div>
+        </div>
+
+        <!-- Pie Chart -->
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <div id="pie-chart"></div>
+            </div>
+        </div>
+
+        <!-- Donut Pie Chart -->
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <div id="donut-pie-chart"></div>
+            </div>
+        </div>
+
+        <!-- Sin Wave with Line Marker -->
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <div id="sin-wave"></div>
+            </div>
+        </div>
+
+        <!-- Cos Wave with Marked Marker -->
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <div id="cos-wave"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simple Graph
+        var simpleData = [{
+            x: [1, 2, 3, 4, 5],
+            y: [10, 11, 12, 11, 10],
+            type: 'scatter'
+        }];
+        var simpleLayout = {
+            title: 'Simple Graph'
+        };
+        Plotly.newPlot('simple-graph', simpleData, simpleLayout);
+
+        // Pie Chart
+        var pieData = [{
+            labels: ['A', 'B', 'C'],
+            values: [45, 35, 20],
+            type: 'pie'
+        }];
+        var pieLayout = {
+            title: 'Pie Chart'
+        };
+        Plotly.newPlot('pie-chart', pieData, pieLayout);
+
+        // Donut Pie Chart
+        var donutData = [{
+            labels: ['X', 'Y', 'Z'],
+            values: [30, 40, 30],
+            type: 'pie',
+            hole: 0.4
+        }];
+        var donutLayout = {
+            title: 'Donut Pie Chart'
+        };
+        Plotly.newPlot('donut-pie-chart', donutData, donutLayout);
+
+        // Sin Wave with Line Marker
+        var sinX = [];
+        var sinY = [];
+        for (var i = 0; i < 2 * Math.PI; i += 0.1) {
+            sinX.push(i);
+            sinY.push(Math.sin(i));
+        }
+        var sinData = [{
+            x: sinX,
+            y: sinY,
+            type: 'scatter',
+            mode: 'lines'
+        }];
+        var sinLayout = {
+            title: 'Sin Wave with Line Marker'
+        };
+        Plotly.newPlot('sin-wave', sinData, sinLayout);
+
+        // Cos Wave with Marked Marker
+        var cosX = [];
+        var cosY = [];
+        for (var i = 0; i < 2 * Math.PI; i += 0.1) {
+            cosX.push(i);
+            cosY.push(Math.cos(i));
+        }
+        var cosData = [{
+            x: cosX,
+            y: cosY,
+            type: 'scatter',
+            mode: 'markers'
+        }];
+        var cosLayout = {
+            title: 'Cos Wave with Marked Marker'
+        };
+        Plotly.newPlot('cos-wave', cosData, cosLayout);
+    </script>
+
+    
+</body>
+</html>
